@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Clarity MiniApp</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body { background-color: #111; color: white; font-family: Arial; text-align: center; }
+    button { margin: 10px; padding: 10px 20px; border: none; background: #00AEEF; color: white; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Clarity</h1>
+  <p>Из ничего начинается всё.</p>
+
+  <button onclick="openTab('donate')">💎 Донат</button>
+  <button onclick="openTab('tasks')">📋 Задания</button>
+  <button onclick="openTab('info')">ℹ️ О проекте</button>
+
+  <div id="content" style="margin-top:20px;"></div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+
+    function openTab(tab) {
+      const content = document.getElementById('content');
+      if (tab === 'donate') content.innerHTML = '💰 Здесь можно поддержать проект.';
+      if (tab === 'tasks') content.innerHTML = '🧩 Здесь будут задания.';
+      if (tab === 'info') content.innerHTML = '🌍 Проект Clarity — новая социальная экономика.';
+    }
+  </script>
+</body>
+</html>
